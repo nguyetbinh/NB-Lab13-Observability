@@ -1,19 +1,15 @@
-# Day 13 Observability Lab Report
+# Báo cáo cá nhân Day 13 Observability Lab
 
-## 1. Team Metadata
+## 1. Thông tin cá nhân
 
-- [GROUP_NAME]: NB-Lab13-Observability
+- [GROUP_NAME]: Vương Nguyệt Bình - Individual Submission
 - [REPO_URL]: https://github.com/nguyetbinh/NB-Lab13-Observability
 - [MEMBERS]:
-  - Member A: Tin Duong | Role: Individual submission - Logging, Tracing, SRE, Incident Response, Report
-  - Member B: Not assigned | Role: Individual submission
-  - Member C: Not assigned | Role: Individual submission
-  - Member D: Not assigned | Role: Individual submission
-  - Member E: Not assigned | Role: Individual submission
+  - Vương Nguyệt Bình | Vai trò: Thực hiện cá nhân toàn bộ Logging, Tracing, Metrics, Dashboard, Alerts, Incident Response và Report
 
 ---
 
-## 2. Group Performance (Auto-Verified)
+## 2. Kết quả kỹ thuật (Auto-Verified)
 
 - [VALIDATE_LOGS_FINAL_SCORE]: 100/100
 - [TOTAL_TRACES_COUNT]: 77 agent traces in Langfuse; latest 10 verified automatically
@@ -21,7 +17,7 @@
 
 ---
 
-## 3. Technical Evidence (Group)
+## 3. Minh chứng kỹ thuật
 
 ### 3.1 Logging & Tracing
 
@@ -29,7 +25,7 @@
 - [EVIDENCE_PII_REDACTION_SCREENSHOT]: [docs/evidence/pii-redaction-log.png](evidence/pii-redaction-log.png)
 - [EVIDENCE_TRACE_LIST_SCREENSHOT]: [docs/evidence/trace-list.png](evidence/trace-list.png)
 - [EVIDENCE_TRACE_WATERFALL_SCREENSHOT]: [docs/evidence/trace-waterfall.png](evidence/trace-waterfall.png)
-- [TRACE_WATERFALL_EXPLANATION]: Trace `65c9bd50639192acc5020afe53019648` took 3663 ms. Its `rag-retrieval` span took 3506 ms while `llm-generation` took 156 ms, proving retrieval was the latency bottleneck.
+- [TRACE_WATERFALL_EXPLANATION]: Trace `65c9bd50639192acc5020afe53019648` mất tổng cộng 3663 ms. Span `rag-retrieval` chiếm 3506 ms, trong khi `llm-generation` chỉ mất 156 ms. Điều này chứng minh nút thắt nằm ở bước retrieval, không phải mô hình LLM.
 
 ### 3.2 Dashboard & SLOs
 
@@ -52,44 +48,24 @@
 
 ---
 
-## 4. Incident Response (Group)
+## 4. Xử lý sự cố
 
 - [SCENARIO_NAME]: `rag_slow`
-- [SYMPTOMS_OBSERVED]: Baseline P95 was 157 ms. During the incident P95 rose to 3662 ms and breached the 3000 ms SLO. Error rate remained 0%, isolating the symptom to latency.
-- [ROOT_CAUSE_PROVED_BY]: Trace `65c9bd50639192acc5020afe53019648`; `rag-retrieval=3506 ms`, `llm-generation=156 ms`. Log correlation ID `incident-rag-slow` contains the same trace ID, session and request context.
-- [FIX_ACTION]: Disabled `rag_slow`, reset the measurement window and reran the 10-query load test.
-- [PREVENTIVE_MEASURE]: Alert when P95 exceeds 3000 ms for 5 minutes; inspect RAG span first, then use a retrieval timeout/fallback source.
+- [SYMPTOMS_OBSERVED]: P95 baseline là 157 ms. Khi bật incident, P95 tăng lên 3662 ms và vượt SLO 3000 ms. Error rate vẫn bằng 0%, vì vậy đây là sự cố latency thay vì availability.
+- [ROOT_CAUSE_PROVED_BY]: Trace `65c9bd50639192acc5020afe53019648` cho thấy `rag-retrieval=3506 ms`, còn `llm-generation=156 ms`. Log có correlation ID `incident-rag-slow` chứa cùng trace ID, session và request context.
+- [FIX_ACTION]: Tắt `rag_slow`, reset cửa sổ metrics và chạy lại load test gồm 10 queries.
+- [PREVENTIVE_MEASURE]: Cảnh báo khi P95 vượt 3000 ms trong 5 phút; kiểm tra RAG span trước, sau đó áp dụng retrieval timeout và fallback source.
 
 Full RCA: [docs/incident-report.md](incident-report.md)
 
 ---
 
-## 5. Individual Contributions & Evidence
+## 5. Đóng góp cá nhân và minh chứng
 
-### Tin Duong
+### Vương Nguyệt Bình
 
-- [TASKS_COMPLETED]: Implemented correlation middleware, structured log enrichment, recursive PII redaction, Langfuse v3 tracing, RAG/LLM waterfall spans, rolling run metrics, six-panel dashboard, alert validation, incident drill, automated evidence generation and final report.
+- [TASKS_COMPLETED]: Cá nhân hoàn thành toàn bộ bài lab: triển khai correlation ID middleware; enrich structured logs; hash user ID; redact đệ quy email, số điện thoại, CCCD, thẻ tín dụng, passport và địa chỉ; tích hợp Langfuse v3; xây dựng waterfall `agent-run -> rag-retrieval + llm-generation`; ghi token usage, cost và trace ID; xây dựng metrics và dashboard 6 panels; cấu hình 3 alert rules cùng runbook; chạy incident drill `rag_slow` theo flow Metrics -> Traces -> Logs; xác minh recovery; viết test, validation scripts, walkthrough, RCA và báo cáo cuối.
 - [EVIDENCE_LINK]: [Implementation commit 00c8c67](https://github.com/nguyetbinh/NB-Lab13-Observability/commit/00c8c67), [Phase 1/2/4 walkthrough](phase1-2-4-walkthrough.md), [Phase 3 walkthrough](phase3-walkthrough.md), [Phase 5-7 walkthrough](phase5-7-walkthrough.md)
-
-### Not Assigned - Member B
-
-- [TASKS_COMPLETED]: Individual submission; covered by Tin Duong.
-- [EVIDENCE_LINK]: Not applicable.
-
-### Not Assigned - Member C
-
-- [TASKS_COMPLETED]: Individual submission; covered by Tin Duong.
-- [EVIDENCE_LINK]: Not applicable.
-
-### Not Assigned - Member D
-
-- [TASKS_COMPLETED]: Individual submission; covered by Tin Duong.
-- [EVIDENCE_LINK]: Not applicable.
-
-### Not Assigned - Member E
-
-- [TASKS_COMPLETED]: Individual submission; covered by Tin Duong.
-- [EVIDENCE_LINK]: Not applicable.
 
 ---
 
