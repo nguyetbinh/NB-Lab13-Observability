@@ -1,0 +1,212 @@
+{
+  "id": "65c9bd50639192acc5020afe53019648",
+  "timestamp": "2026-06-15 08:51:07.305000+00:00",
+  "name": "agent-run",
+  "input": {
+    "feature": "qa",
+    "query_preview": "Explain monitoring and retrieval latency"
+  },
+  "output": {
+    "latency_ms": 3662,
+    "quality_score": 0.9
+  },
+  "sessionId": "incident-rag-slow",
+  "userId": "1dce43d1ba67",
+  "metadata": {
+    "feature": "qa",
+    "model": "claude-sonnet-4-5",
+    "doc_count": 1,
+    "query_preview": "Explain monitoring and retrieval latency"
+  },
+  "tags": [
+    "claude-sonnet-4-5",
+    "lab",
+    "qa"
+  ],
+  "public": false,
+  "environment": "default",
+  "htmlPath": "/project/cmqex8io700rrad0d67b6o8en/traces/65c9bd50639192acc5020afe53019648",
+  "latency": 3.663,
+  "totalCost": 0.00189,
+  "observations": [
+    {
+      "id": "9cbc55a5b0deed31",
+      "traceId": "65c9bd50639192acc5020afe53019648",
+      "type": "GENERATION",
+      "name": "llm-generation",
+      "startTime": "2026-06-15 08:51:10.811000+00:00",
+      "endTime": "2026-06-15 08:51:10.967000+00:00",
+      "completionStartTime": null,
+      "model": "claude-sonnet-4-5",
+      "modelParameters": {},
+      "input": {
+        "feature": "qa",
+        "query_preview": "Explain monitoring and retrieval latency"
+      },
+      "version": null,
+      "metadata": {
+        "doc_count": 1,
+        "query_preview": "Explain monitoring and retrieval latency"
+      },
+      "output": {
+        "answer_preview": "Starter answer. Teams should improve this output logic and add better quality ch..."
+      },
+      "usage": {
+        "input": 35,
+        "output": 119,
+        "total": 154,
+        "unit": "TOKENS"
+      },
+      "level": "DEFAULT",
+      "statusMessage": null,
+      "parentObservationId": "82fbdb09e8444790",
+      "promptId": null,
+      "usageDetails": {
+        "input": 35,
+        "output": 119,
+        "total": 154
+      },
+      "costDetails": {
+        "total": 0.00189
+      },
+      "environment": "default",
+      "promptName": null,
+      "promptVersion": null,
+      "modelId": "c5qmrqolku82tra3vgdixmys",
+      "inputPrice": 6e-06,
+      "outputPrice": 1.5e-05,
+      "totalPrice": 0.0,
+      "calculatedInputCost": null,
+      "calculatedOutputCost": null,
+      "calculatedTotalCost": 0.00189,
+      "latency": 0.156,
+      "timeToFirstToken": null,
+      "unit": "TOKENS",
+      "totalTokens": 154,
+      "usagePricingTierName": "Standard",
+      "projectId": "cmqex8io700rrad0d67b6o8en",
+      "updatedAt": "2026-06-15T08:51:14.421Z",
+      "promptTokens": 35,
+      "usagePricingTierId": "c5qmrqolku82tra3vgdixmys_tier_default",
+      "createdAt": "2026-06-15T08:51:14.420Z",
+      "completionTokens": 119
+    },
+    {
+      "id": "82fbdb09e8444790",
+      "traceId": "65c9bd50639192acc5020afe53019648",
+      "type": "SPAN",
+      "name": "agent-run",
+      "startTime": "2026-06-15 08:51:07.305000+00:00",
+      "endTime": "2026-06-15 08:51:10.968000+00:00",
+      "completionStartTime": null,
+      "model": null,
+      "modelParameters": null,
+      "input": null,
+      "version": null,
+      "metadata": {
+        "doc_count": 1,
+        "query_preview": "Explain monitoring and retrieval latency"
+      },
+      "output": {
+        "answer_preview": "Starter answer. Teams should improve this output logic and add better quality ch...",
+        "quality_score": 0.9
+      },
+      "usage": {
+        "input": 0,
+        "output": 0,
+        "total": 0,
+        "unit": "TOKENS"
+      },
+      "level": "DEFAULT",
+      "statusMessage": null,
+      "parentObservationId": null,
+      "promptId": null,
+      "usageDetails": {},
+      "costDetails": {},
+      "environment": "default",
+      "promptName": null,
+      "promptVersion": null,
+      "modelId": null,
+      "inputPrice": 0.0,
+      "outputPrice": 0.0,
+      "totalPrice": 0.0,
+      "calculatedInputCost": null,
+      "calculatedOutputCost": null,
+      "calculatedTotalCost": 0.0,
+      "latency": 3.663,
+      "timeToFirstToken": null,
+      "unit": "TOKENS",
+      "totalTokens": 0,
+      "usagePricingTierName": null,
+      "projectId": "cmqex8io700rrad0d67b6o8en",
+      "updatedAt": "2026-06-15T08:51:14.421Z",
+      "promptTokens": 0,
+      "usagePricingTierId": null,
+      "createdAt": "2026-06-15T08:51:14.421Z",
+      "completionTokens": 0
+    },
+    {
+      "id": "acf788d9f28df601",
+      "traceId": "65c9bd50639192acc5020afe53019648",
+      "type": "SPAN",
+      "name": "rag-retrieval",
+      "startTime": "2026-06-15 08:51:07.305000+00:00",
+      "endTime": "2026-06-15 08:51:10.811000+00:00",
+      "completionStartTime": null,
+      "model": null,
+      "modelParameters": null,
+      "input": {
+        "query_preview": "Explain monitoring and retrieval latency"
+      },
+      "version": null,
+      "metadata": {
+        "doc_count": 1,
+        "query_preview": "Explain monitoring and retrieval latency"
+      },
+      "output": {
+        "doc_count": 1
+      },
+      "usage": {
+        "input": 0,
+        "output": 0,
+        "total": 0,
+        "unit": "TOKENS"
+      },
+      "level": "DEFAULT",
+      "statusMessage": null,
+      "parentObservationId": "82fbdb09e8444790",
+      "promptId": null,
+      "usageDetails": {},
+      "costDetails": {},
+      "environment": "default",
+      "promptName": null,
+      "promptVersion": null,
+      "modelId": null,
+      "inputPrice": 0.0,
+      "outputPrice": 0.0,
+      "totalPrice": 0.0,
+      "calculatedInputCost": null,
+      "calculatedOutputCost": null,
+      "calculatedTotalCost": 0.0,
+      "latency": 3.506,
+      "timeToFirstToken": null,
+      "unit": "TOKENS",
+      "totalTokens": 0,
+      "usagePricingTierName": null,
+      "projectId": "cmqex8io700rrad0d67b6o8en",
+      "updatedAt": "2026-06-15T08:51:14.421Z",
+      "promptTokens": 0,
+      "usagePricingTierId": null,
+      "createdAt": "2026-06-15T08:51:14.420Z",
+      "completionTokens": 0
+    }
+  ],
+  "scores": [],
+  "projectId": "cmqex8io700rrad0d67b6o8en",
+  "bookmarked": false,
+  "updatedAt": "2026-06-15T08:51:14.492Z",
+  "createdAt": "2026-06-15T08:51:15.000Z",
+  "release": null,
+  "version": null,
+  "externalId": null
+}

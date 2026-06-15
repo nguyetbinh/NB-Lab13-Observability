@@ -1,0 +1,45 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Trace Waterfall</title>
+<style>
+body { background:#07111f;color:#e5eefb;font-family:Inter,system-ui;margin:0;padding:32px }
+main { max-width:1050px;margin:auto } h1 { margin-bottom:6px }
+.subtitle,.meta,span { color:#91a9c7 } article { background:#101e32;border:1px solid #294563;border-radius:12px;padding:18px;margin:14px 0 }
+.row { display:flex;justify-content:space-between;font-size:20px } .track { height:16px;background:#1d3049;border-radius:8px;margin:14px 0 }
+.bar { height:100%;background:linear-gradient(90deg,#48d597,#4aa8ff);border-radius:8px }
+.root { color:#8fc7ff } code { color:#48d597 }
+</style></head><body><main>
+<h1>Langfuse Trace Waterfall</h1>
+<div class="subtitle">Trace ID: <code>65c9bd50639192acc5020afe53019648</code> | Session: incident-rag-slow</div>
+<div class="subtitle">Total latency: 3663 ms | Root cause: RAG retrieval delay</div>
+
+            <article>
+              <div class="row">
+                <div><b>agent-run</b> <span>SPAN</span></div>
+                <strong>3663 ms</strong>
+              </div>
+              <div class="track"><div class="bar" style="width:100.0%"></div></div>
+              <div class="meta">Parent: root
+              | Tokens: n/a</div>
+            </article>
+            
+            <article>
+              <div class="row">
+                <div><b>rag-retrieval</b> <span>SPAN</span></div>
+                <strong>3506 ms</strong>
+              </div>
+              <div class="track"><div class="bar" style="width:95.7%"></div></div>
+              <div class="meta">Parent: 82fbdb09e8444790
+              | Tokens: n/a</div>
+            </article>
+            
+            <article>
+              <div class="row">
+                <div><b>llm-generation</b> <span>GENERATION</span></div>
+                <strong>156 ms</strong>
+              </div>
+              <div class="track"><div class="bar" style="width:4.3%"></div></div>
+              <div class="meta">Parent: 82fbdb09e8444790
+              | Tokens: {&#x27;input&#x27;: 35, &#x27;output&#x27;: 119, &#x27;total&#x27;: 154}</div>
+            </article>
+            
+</main></body></html>

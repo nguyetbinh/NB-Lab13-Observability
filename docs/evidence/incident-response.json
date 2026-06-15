@@ -1,0 +1,1 @@
+{"answer":"Starter answer. Teams should improve this output logic and add better quality checks. Use retrieved context and keep responses concise.","correlation_id":"incident-rag-slow","latency_ms":3662,"tokens_in":35,"tokens_out":119,"cost_usd":0.00189,"quality_score":0.9}

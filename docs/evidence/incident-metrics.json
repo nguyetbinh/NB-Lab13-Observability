@@ -1,0 +1,1 @@
+{"traffic":11,"total_requests":11,"latency_p50_ms":3659.0,"latency_p95_ms":3662.0,"latency_p99_ms":3662.0,"error_count":0,"error_rate_pct":0.0,"error_breakdown":{},"avg_cost_usd":0.002215,"total_cost_usd":0.02436,"tokens_in_total":375,"tokens_out_total":1549,"quality_avg":0.8818}

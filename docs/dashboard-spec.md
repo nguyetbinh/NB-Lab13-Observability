@@ -1,16 +1,22 @@
 # Dashboard Spec
 
-Required Layer-2 panels:
-1. Latency P50/P95/P99
-2. Traffic (request count or QPS)
-3. Error rate with breakdown
-4. Cost over time
-5. Tokens in/out
-6. Quality proxy (heuristic, thumbs, or regenerate rate)
+Runtime URL: `http://127.0.0.1:8000/dashboard`
 
-Quality bar:
-- default time range = 1 hour
-- auto refresh every 15-30 seconds
-- visible threshold/SLO line
-- units clearly labeled
-- no more than 6-8 panels on the main layer
+## Main Layer
+
+| Panel | Source fields | Unit | Threshold |
+|---|---|---|---|
+| Latency | `latency_p50_ms`, `latency_p95_ms`, `latency_p99_ms` | milliseconds | P95 `< 3000 ms` |
+| Traffic | `traffic`, `total_requests` | requests | informational |
+| Errors | `error_rate_pct`, `error_breakdown` | percent | `< 2%` |
+| Cost | `total_cost_usd` | USD | `< $2.50/day` |
+| Tokens | `tokens_in_total`, `tokens_out_total` | tokens | informational |
+| Quality | `quality_avg` | score 0-1 | `>= 0.75` |
+
+## Dashboard Settings
+
+- Default time range: last 1 hour.
+- Auto refresh: 15 seconds.
+- Main layer panel count: exactly 6.
+- SLO source: `config/slo.yaml`.
+- Evidence path: `docs/evidence/dashboard-6-panels.png`.

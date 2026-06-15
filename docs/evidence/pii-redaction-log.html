@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>PII Redaction Evidence</title>
+<style>
+body { background:#07111f;color:#e5eefb;font-family:Inter,system-ui;margin:0;padding:34px }
+main { max-width:1120px;margin:auto } h1 { margin-bottom:6px } .subtitle { color:#91a9c7;margin-bottom:22px }
+article,pre { background:#101e32;border:1px solid #294563;border-radius:12px;padding:17px;margin:12px 0 }
+.row { display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px } code { color:#48d597 }
+.tag { display:inline-block;background:#233c59;border-radius:12px;padding:3px 8px;margin:2px;color:#8fc7ff }
+pre { white-space:pre-wrap;word-break:break-word;font-size:15px;line-height:1.5 } mark { background:#234d43;color:#60e8aa }
+</style></head><body><main><h1>PII Redaction Evidence</h1>
+<div class="subtitle">Raw personal data is removed before JSON rendering and file output.</div><pre>{
+  &quot;service&quot;: &quot;api&quot;,
+  &quot;payload&quot;: {
+    &quot;message_preview&quot;: &quot;What is your refund policy? My email is [REDACTED_EMAIL]&quot;
+  },
+  &quot;event&quot;: &quot;request_received&quot;,
+  &quot;feature&quot;: &quot;qa&quot;,
+  &quot;session_id&quot;: &quot;s01&quot;,
+  &quot;model&quot;: &quot;claude-sonnet-4-5&quot;,
+  &quot;correlation_id&quot;: &quot;req-521b1ca4&quot;,
+  &quot;env&quot;: &quot;dev&quot;,
+  &quot;user_id_hash&quot;: &quot;2055254ee30a&quot;,
+  &quot;level&quot;: &quot;info&quot;,
+  &quot;ts&quot;: &quot;2026-06-15T08:49:58.797710Z&quot;
+}</pre></main></body></html>

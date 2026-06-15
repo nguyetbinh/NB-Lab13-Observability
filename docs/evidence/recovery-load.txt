@@ -1,0 +1,10 @@
+[200] req-31d8f934 | summary | 800.8ms
+[200] req-a6ee816a | qa | 804.2ms
+[200] req-ea4005bc | qa | 804.0ms
+[200] req-be392f10 | qa | 805.2ms
+[200] req-77b3f8c4 | qa | 804.9ms
+[200] req-0d6732c8 | summary | 167.9ms
+[200] req-97d1bdc9 | qa | 807.3ms
+[200] req-7c48eaff | qa | 806.9ms
+[200] req-ee42a09a | qa | 808.3ms
+[200] req-3f47c15e | qa | 806.9ms

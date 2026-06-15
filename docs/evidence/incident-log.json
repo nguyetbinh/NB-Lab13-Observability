@@ -1,0 +1,20 @@
+{
+  "service": "api",
+  "latency_ms": 3662,
+  "tokens_in": 35,
+  "tokens_out": 119,
+  "cost_usd": 0.00189,
+  "trace_id": "65c9bd50639192acc5020afe53019648",
+  "payload": {
+    "answer_preview": "Starter answer. Teams should improve this output logic and add better quality ch..."
+  },
+  "event": "response_sent",
+  "correlation_id": "incident-rag-slow",
+  "user_id_hash": "1dce43d1ba67",
+  "feature": "qa",
+  "session_id": "incident-rag-slow",
+  "env": "dev",
+  "model": "claude-sonnet-4-5",
+  "level": "info",
+  "ts": "2026-06-15T08:51:10.969822Z"
+}
